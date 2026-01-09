@@ -12,7 +12,8 @@ const navLinks = [
 ];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -24,40 +25,65 @@ export function Header() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-body text-sm uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors duration-300 relative group"
-              >
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+          <nav className="w-2/4 flex justify-center items-center gap-16 text-sm tracking-[0.25em] text-gray-700 uppercase relative ali">
+
+            <a href="#home" className="hover:text-[#d4af37] transition">
+              Home
+            </a>
+
+            {/* ✅ Collections Dropdown */}
+            <div
+              className="relative"
+            >
+              <button onMouseEnter={() => setDropdownOpen(true)} className="hover:text-[#d4af37] transition">
+                COLLECTIONS
+              </button>
+
+              {dropdownOpen && (
+                <div className="absolute left-1/2 -translate-x-1/2 mt-6 w-56 bg-white shadow-2xl border border-gray-100 rounded-xl overflow-hidden z-50 normal-case tracking-normal" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+                  <a href="#oud" onClick={() => setDropdownOpen(false)} className="block px-6 py-3 hover:bg-gray-50">
+                    Oud Collection
+                  </a>
+                  <a href="#musk" onClick={() => setDropdownOpen(false)} className="block px-6 py-3 hover:bg-gray-50">
+                    Musk Series
+                  </a>
+                  <a href="#attar" onClick={() => setDropdownOpen(false)} className="block px-6 py-3 hover:bg-gray-50">
+                    Attar Oils
+                  </a>
+                  <a href="#gift" onClick={() => setDropdownOpen(false)} className="block px-6 py-3 hover:bg-gray-50">
+                    Gift Sets
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a href="#heritage" className="hover:text-[#d4af37] transition">
+              Heritage
+            </a>
+
+            <a href="#contact" className="hover:text-[#d4af37] transition">
+              Contact
+            </a>
+
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button variant="goldOutline" size="lg">
-              Shop Now
-            </Button>
-          </div>
+          
 
           {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden p-2"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -72,7 +98,7 @@ export function Header() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setMobileOpen(false)}
                   className="font-body text-lg uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors"
                 >
                   {link.name}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
@@ -104,9 +105,12 @@ export function Collections() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <Button variant="goldOutline" size="xl">
+          <Link
+            to="/collections"
+            className="border border-[#d4af37] px-10 py-3 text-sm tracking-widest text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition"
+          >
             View All Collections
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
