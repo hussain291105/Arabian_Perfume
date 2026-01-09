@@ -6,6 +6,7 @@ const products = [
     name: "Royal Oud",
     price: "$280",
     image: "/products/royal-oud.jpeg",
+    desc: "Deep woody oud with royal warmth",
   },
   {
     id: 2,
@@ -68,7 +69,7 @@ export default function Collections() {
         >
              ← Back
         </button>
-        
+
       {/* Heading */}
       <div className="text-center mb-16">
         <p className="text-sm tracking-[0.3em] text-[#d4af37] uppercase mb-3">
@@ -83,12 +84,21 @@ export default function Collections() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
         {products.map((p) => (
           <div key={p.id} className="text-center group">
-            <div className="overflow-hidden mb-6">
+            <div className="relative overflow-hidden mb-6 group">
               <img
                 src={p.image}
                 alt={p.name}
-                className="w-full h-[420px] object-cover group-hover:scale-105 transition duration-500"
+                className="w-full h-[420px] object-cover group-hover:scale-110 transition duration-700"
               />
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+              {/* Text on Hover */}
+              <div className="absolute inset-0 flex flex-col justify-end items-center pb-8 text-white opacity-0 group-hover:opacity-100 transition duration-500 text-center px-6">
+                <p className="text-sm opacity-90">{p.desc}</p>
+              </div>
+
             </div>
 
             <h3 className="text-lg tracking-wide">{p.name}</h3>
