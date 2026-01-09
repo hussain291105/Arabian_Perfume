@@ -1,8 +1,30 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 export function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    emailjs.send(
+      "service_qgwqr32",
+      "template_vx8auye",
+      { user_email: email },
+      "s5BeUpXl8Y5YY0x4-"
+    )
+    .then(() => {
+      setStatus("Thank you for subscribing!");
+      setEmail("");
+    })
+    .catch(() => {
+      setStatus("Failed to send. Try again later.");
+    });
+  };
   return (
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
@@ -32,16 +54,28 @@ export function Newsletter() {
           </p>
 
           {/* Form */}
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <Input
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-6 justify-center"
+          >
+            <input
               type="email"
+              required
               placeholder="Enter your email"
-              className="h-14 px-6 border-border bg-transparent font-body text-base placeholder:text-muted-foreground focus:border-gold"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full sm:w-auto flex-1 px-6 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
             />
-            <Button variant="gold" size="lg" className="h-14 px-8">
+            <Button type="submit" variant="gold" size="lg">
               Subscribe
             </Button>
           </form>
+
+          {status && (
+            <p className="font-body text-sm text-foreground mt-4">
+              {status}
+            </p>
+          )}
 
           <p className="font-body text-sm text-muted-foreground mt-6">
             By subscribing, you agree to our Privacy Policy

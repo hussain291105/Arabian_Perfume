@@ -107,7 +107,7 @@ export function Collections() {
         >
           <Link
             to="/collections"
-            className="border border-[#d4af37] px-10 py-3 text-sm tracking-widest text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition"
+            className="border border-[#d4af37] px-10 py-3 text-sm rounded-2xl tracking-widest text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition"
           >
             View All Collections
           </Link>

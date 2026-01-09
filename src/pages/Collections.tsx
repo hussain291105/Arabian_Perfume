@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const products = [
   {
     id: 1,
@@ -56,8 +58,17 @@ const products = [
 ];
 
 export default function Collections() {
+    const navigate = useNavigate();
   return (
     <section className="pt-36 pb-24 max-w-7xl mx-auto px-8">
+        {/* Back Button */}
+        <button
+            onClick={() => navigate(-1)}
+            className="mb-10 inline-flex items-center gap-2 text-sm tracking-widest uppercase text-[#d4af37] hover:underline"
+        >
+             ← Back
+        </button>
+        
       {/* Heading */}
       <div className="text-center mb-16">
         <p className="text-sm tracking-[0.3em] text-[#d4af37] uppercase mb-3">
