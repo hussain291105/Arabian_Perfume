@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heritageImg from "@/assets/heritage.jpg";
+import { Link } from "react-router-dom";
 
 export function Heritage() {
   return (
@@ -82,9 +83,11 @@ export function Heritage() {
               ))}
             </div>
 
-            <Button variant="goldOutline" size="xl">
-              Discover Our Story
-            </Button>
+            <Link to="/story">
+              <Button variant="goldOutline" size="xl">
+                Discover Our Story
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

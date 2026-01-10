@@ -106,6 +106,16 @@ export default function Collections() {
           </div>
         ))}
       </div>
+
+      {/* Closing Statement */}
+      <div className="mt-20 text-center">
+        <button
+          onClick={() => navigate("/")}
+          className="border border-[#d4af37] text-[#d4af37] rounded-2xl px-10 py-4 tracking-widest hover:bg-[#d4af37] hover:text-black transition"
+        >
+          RETURN TO HOME
+        </button>
+      </div>
     </section>
   );
 }

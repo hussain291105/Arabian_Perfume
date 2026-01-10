@@ -77,9 +77,6 @@ export function Collections() {
                   whileHover={{ opacity: 1, y: 0 }}
                   className="absolute bottom-6 left-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 >
-                  <Button variant="gold" className="w-full">
-                    Quick View
-                  </Button>
                 </motion.div>
               </div>
 
@@ -107,7 +104,7 @@ export function Collections() {
         >
           <Link
             to="/collections"
-            className="border border-[#d4af37] px-10 py-3 text-sm rounded-2xl tracking-widest text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition"
+            className="border border-[#d4af37] rounded-xl px-10 py-3 text-sm tracking-widest text-[#d4af37] hover:bg-[#d4af37] hover:text-white transition"
           >
             View All Collections
           </Link>
