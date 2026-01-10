@@ -18,7 +18,7 @@ const products = [
     image: "/products/golden-musk.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Musk",
-    date: "2025-12-01",
+    date: "2020-12-01",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const products = [
     image: "/products/desert-rose.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Rose",
-    date: "2025-12-01",
+    date: "2027-12-01",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const products = [
     image: "/products/white-musk.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Musk",
-    date: "2025-12-01",
+    date: "2024-12-01",
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const products = [
     image: "/products/oud-supreme.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Oud",
-    date: "2025-12-01",
+    date: "2023-12-01",
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ const products = [
     image: "/products/velvet-rose.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Rose",
-    date: "2025-12-01",
+    date: "2024-12-01",
   },
   {
     id: 8,
@@ -72,7 +72,7 @@ const products = [
     image: "/products/black-amber.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Amber",
-    date: "2025-12-01",
+    date: "2026-12-01",
   },
   {
     id: 9,
@@ -81,7 +81,7 @@ const products = [
     image: "/products/pure-attar.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Attar",
-    date: "2025-12-01",
+    date: "2025-11-01",
   },
 ];
 
