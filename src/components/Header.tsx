@@ -14,6 +14,17 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleMobileNavClick = (id: string) => {
+    setIsOpen(false);
+
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 lg:px-12">
@@ -63,17 +74,16 @@ export function Header() {
           >
             <nav className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.button
                   key={link.name}
-                  href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsOpen(false)}
-                  className="font-body text-lg uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors"
+                  onClick={() => handleMobileNavClick(link.href.replace("#", ""))}
+                  className="text-left font-body text-lg uppercase tracking-[0.2em] text-foreground/80 hover:text-gold transition-colors"
                 >
                   {link.name}
-                </motion.a>
+                </motion.button>
               ))}
             </nav>
           </motion.div>
