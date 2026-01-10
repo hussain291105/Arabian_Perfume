@@ -68,13 +68,29 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button variant="gold" size="xl">
+            <Button
+              variant="heroGold"
+              size="xl"
+              className="border-gold hover:border-gold-dark text-gold hover:text-gold-dark"
+              onClick={() => {
+                const el = document.getElementById("collections");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
+            >
               Explore Collection
             </Button>
             <Button 
               variant="heroGold" 
               size="xl"
               className="border-primary-foreground/30 text-primary-foreground hover:border-gold"
+              onClick={() => {
+                const el = document.getElementById("heritage");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
             >
               Our Story
             </Button>
