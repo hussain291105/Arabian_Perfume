@@ -10,21 +10,24 @@ const collections = [
     id: 1,
     name: "Royal Oud",
     description: "Deep, woody notes with a touch of mystique",
-    price: "$280",
+    price: 280,
+    currency: "₹",
     image: product1,
   },
   {
     id: 2,
     name: "Golden Musk",
     description: "Soft, sensual musk with warm undertones",
-    price: "$220",
+    price: 220,
+    currency: "₹",
     image: product2,
   },
   {
     id: 3,
     name: "Desert Rose",
     description: "Enchanting floral with oriental spices",
-    price: "$195",
+    price: 195,
+    currency: "₹",
     image: product3,
   },
 ];
@@ -88,7 +91,7 @@ export function Collections() {
                 <p className="font-body text-muted-foreground mb-3">
                   {product.description}
                 </p>
-                <p className="font-heading text-lg text-gold">{product.price}</p>
+                <p className="font-poppins text-lg text-gold tracking-wide">{product.currency}{product.price.toLocaleString()}</p>
               </div>
             </motion.div>
           ))}

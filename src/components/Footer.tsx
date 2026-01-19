@@ -96,7 +96,7 @@ export function Footer() {
       <div className="border-t border-background/10">
         <div className="container mx-auto px-6 lg:px-12 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-body text-sm text-background/50">
+            <p className="font-poppins text-sm text-background/30">
               © 2024 Arabian Perfumes. All rights reserved.
             </p>
             <div className="flex gap-6">

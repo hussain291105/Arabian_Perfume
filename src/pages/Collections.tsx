@@ -6,6 +6,7 @@ const products = [
     id: 1,
     name: "Royal Oud",
     price: 280,
+    currency: "₹",
     image: "/products/royal-oud.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Oud",
@@ -15,6 +16,7 @@ const products = [
     id: 2,
     name: "Golden Musk",
     price: 220,
+    currency: "₹",
     image: "/products/golden-musk.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Musk",
@@ -24,6 +26,7 @@ const products = [
     id: 3,
     name: "Desert Rose",
     price: 195,
+    currency: "₹",
     image: "/products/desert-rose.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Rose",
@@ -33,6 +36,7 @@ const products = [
     id: 4,
     name: "Amber Night",
     price: 210,
+    currency: "₹",
     image: "/products/amber-night.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Amber",
@@ -42,6 +46,7 @@ const products = [
     id: 5,
     name: "White Musk",
     price: 180,
+    currency: "₹",
     image: "/products/white-musk.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Musk",
@@ -51,6 +56,7 @@ const products = [
     id: 6,
     name: "Oud Supreme",
     price: 320,
+    currency: "₹",
     image: "/products/oud-supreme.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Oud",
@@ -60,6 +66,7 @@ const products = [
     id: 7,
     name: "Velvet Rose",
     price: 205,
+    currency: "₹",
     image: "/products/velvet-rose.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Rose",
@@ -68,7 +75,8 @@ const products = [
   {
     id: 8,
     name: "Black Amber",
-    price: 245,
+    price: 2450,
+    currency: "₹",
     image: "/products/black-amber.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Amber",
@@ -78,6 +86,7 @@ const products = [
     id: 9,
     name: "Pure Attar",
     price: 260,
+    currency: "₹",
     image: "/products/pure-attar.jpeg",
     desc: "Deep woody oud with royal warmth",
     category: "Attar",
@@ -219,7 +228,7 @@ export default function Collections() {
             </div>
 
             <h3 className="text-lg tracking-wide">{p.name}</h3>
-            <p className="text-[#896f1a] mt-2 text-xl font-bold">{p.price}</p>
+            <p className="font-poppins text-[#896f1a] mt-2 text-xl font-semibold tracking-wide">{p.currency}{p.price.toLocaleString()}</p>
           </div>
         ))}
       </div>
